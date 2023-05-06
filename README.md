@@ -32,6 +32,21 @@
 $ npm install
 ```
 
+## Load Typeorm Submodule (once)
+
+```bash
+$ git submodule init
+$ git submodule update
+```
+
+## BuildTypeorm
+
+```bash
+$ cd dependencies/typeorm
+$ npm run install
+$ npm run package
+```
+
 ## Running the app
 
 ```bash
@@ -43,6 +58,22 @@ $ npm run start:dev
 
 # production mode
 $ npm run start:prod
+```
+
+## Using docker-compose
+
+### Running the app with docker-compose.yml
+
+```bash
+# run
+$ docker-compose up -d
+```
+
+### Running the app with docker-compose.yml
+
+```bash
+# stop
+$ docker-compose down
 ```
 
 ## Test
@@ -60,7 +91,8 @@ $ npm run test:cov
 
 ## Support
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If
+you'd like to join them, please [read more here](https://docs.nestjs.com/support).
 
 ## Stay in touch
 
@@ -71,3 +103,5 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ## License
 
 Nest is [MIT licensed](LICENSE).
+
+1.1
