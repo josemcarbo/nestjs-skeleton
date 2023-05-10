@@ -15,12 +15,11 @@ export class UsersService {
     return this.usersRepository.signup(user);
   }
 
-  async login(user: Partial<IUser>): Promise<void> {
-    user.password = await this.encryptService.encrypt(user.password);
-    // return this.usersRepository.signup(user);
-  }
-
   async findOne(email: string): Promise<IUser> {
     return this.usersRepository.findOne(email);
+  }
+
+  async find(): Promise<IUser[]> {
+    return this.usersRepository.find();
   }
 }

@@ -18,4 +18,11 @@ export class UsersRepository {
     const user = await this.db.findOne({ email });
     return user && UsersTransformer.toResponse(user.toObject());
   }
+
+  async find(): Promise<IUser[]> {
+    const users = await this.db.find();
+    return (
+      users && users.map((user) => UsersTransformer.toResponse(user.toObject()))
+    );
+  }
 }
