@@ -27,7 +27,13 @@ describe('Users', () => {
       });
 
     expect(response.status).toEqual(201);
-    expect(response.body.email).toEqual('john@email.com');
+    expect(response.body).toEqual(
+      expect.objectContaining({
+        firstName: 'john',
+        lastName: 'doe',
+        email: 'john@email.com',
+      }),
+    );
   });
 
   afterAll(async () => {
