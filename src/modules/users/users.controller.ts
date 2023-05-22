@@ -1,9 +1,5 @@
 import { Body, Controller, Get, Post } from '@nestjs/common';
-import {
-  UsersRegisterDto,
-  UsersRegisterRequestDto,
-  UsersRegisterResponseDto,
-} from './users.dto';
+import { UsersRegisterDto, UsersRegisterResponseDto } from './users.dto';
 import { UsersService } from './users.service';
 import { ERole, IUser } from './users.interface';
 import { Roles } from '../auth/decorators/roles.decorator';
@@ -21,7 +17,7 @@ import {
 export class UsersController {
   constructor(private readonly usersService: UsersService) {}
 
-  @ApiBody({ type: UsersRegisterRequestDto })
+  @ApiBody({ type: UsersRegisterDto })
   @ApiResponse({ status: 201, type: UsersRegisterResponseDto })
   @ApiOperation({ description: 'Register new user' })
   @Public()
